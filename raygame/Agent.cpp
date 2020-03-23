@@ -12,9 +12,10 @@ void Agent::update(float deltaTime)
 
 void Agent::draw()
 {
-	DrawRectangle(m_Position.x, m_Position.y, 10, 10, MAROON);
+	DrawRectangle(m_Position.x, m_Position.y, 100, 100, MAROON);
 }
 
 void Agent::addBehavior(Behavior* behavior)
 {
+	//Add the Behavior to the Behavior list
 }

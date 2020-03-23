@@ -333,6 +333,36 @@
 typedef struct Vector2 {
     float x;
     float y;
+
+    Vector2 operator +(Vector2 rhs)
+    {
+        return Vector2();
+    }
+
+    Vector2 operator -(Vector2 rhs)
+    {
+        return Vector2();
+    }
+
+    void operator +=(Vector2 rhs)
+    {
+
+    }
+
+    Vector2 operator *(float rhs)
+    {
+        return Vector2();
+    }
+
+    float magnitude()
+    {
+
+    }
+
+    Vector2 normalize()
+    {
+        return Vector2();
+    }
 } Vector2;
 
 // Vector3 type

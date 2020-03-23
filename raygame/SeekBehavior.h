@@ -11,6 +11,6 @@ public:
 	void setTarget(Agent* agent) { m_target = agent; }
 
 private:
-	Agent* m_target;
+	Agent* m_target = nullptr;
 };
 
