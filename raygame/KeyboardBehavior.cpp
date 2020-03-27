@@ -2,12 +2,20 @@
 
 Vector2 KeyboardBehavior::update(Agent* agent, float deltaTime)
 {
-	Vector2 force = { 0, 0 };
+	//Find the direction
+	Vector2 direction = { 0, 0 };
+	if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W))		direction.y = -1;
+	if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S))	direction.y = 1;
+	if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A))	direction.x = -1;
+	if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D))	direction.x = 1;
+	//Normalize in case of diagonal
+	direction = direction.normalize();
 
-	if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W))		force.y = -500.0f;
-	if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S))	force.y = 500.0f;
-	if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A))	force.x = -500.0f;
-	if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D))	force.x = 500.0f;
+	//Multiply the direction by the desired speed
+	Vector2 force = direction * agent->getSpeed();
+
+	//Subtract the agent's current velocity from the result to get the force we need to apply
+	force = force - agent->getVelocity();
 
 	return force;
 }

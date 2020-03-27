@@ -132,16 +132,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="ArriveBehavior.cpp" />
+    <ClCompile Include="AvoidBehavior.cpp" />
     <ClCompile Include="Behavior.cpp" />
+    <ClCompile Include="EvadeBehavior.cpp" />
+    <ClCompile Include="FleeBehavior.cpp" />
     <ClCompile Include="KeyboardBehavior.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PursuitBehavior.cpp" />
+    <ClCompile Include="ScreenEdgeBehavior.cpp" />
     <ClCompile Include="SeekBehavior.cpp" />
+    <ClCompile Include="WanderBehavior.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="ArriveBehavior.h" />
+    <ClInclude Include="AvoidBehavior.h" />
     <ClInclude Include="Behavior.h" />
+    <ClInclude Include="EvadeBehavior.h" />
+    <ClInclude Include="FleeBehavior.h" />
     <ClInclude Include="KeyboardBehavior.h" />
+    <ClInclude Include="PursuitBehavior.h" />
+    <ClInclude Include="ScreenEdgeBehavior.h" />
     <ClInclude Include="SeekBehavior.h" />
+    <ClInclude Include="WanderBehavior.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

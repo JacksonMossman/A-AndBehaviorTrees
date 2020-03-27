@@ -14,28 +14,85 @@
 #include "Behavior.h"
 #include "KeyboardBehavior.h"
 #include "SeekBehavior.h"
+#include "FleeBehavior.h"
+#include "WanderBehavior.h"
+#include "PursuitBehavior.h"
+#include "EvadeBehavior.h"
+#include "ArriveBehavior.h"
+#include "ScreenEdgeBehavior.h"
 
 int main()
 {
 	// Initialization
 	//--------------------------------------------------------------------------------------
-	int screenWidth = 1600;
-	int screenHeight = 900;
+	int screenWidth = 3200;
+	int screenHeight = 1800;
 
 	InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
 	SetTargetFPS(60);
 
 	Agent* player = new Agent();
-	player->setPosition({ 100.0f, 100.0f });
+	player->setPosition({ 1600.0f, 900.0f });
+	player->setSpeed(500.0f);
+	player->setColor(SKYBLUE);
 	KeyboardBehavior* keyboardBehavior = new KeyboardBehavior();
 	player->addBehavior(keyboardBehavior);
+	ScreenEdgeBehavior* screenEdgeBehavior = new ScreenEdgeBehavior();
+	player->addBehavior(screenEdgeBehavior);
 
-	Agent* enemy = new Agent();
-	enemy->setPosition({ 500.0f, 500.0f });
+	Agent* seeker = new Agent();
+	seeker->setPosition({ 1500.0f, 1000.0f });
+	seeker->setSpeed(250.0f);
+	seeker->setColor(MAROON);
 	SeekBehavior* seekBehavior = new SeekBehavior();
+	seeker->addBehavior(seekBehavior);
 	seekBehavior->setTarget(player);
-	enemy->addBehavior(seekBehavior);
+	seeker->addBehavior(screenEdgeBehavior);
+
+	Agent* pursuer = new Agent();
+	pursuer->setPosition({ 1500.0f, 1000.0f });
+	pursuer->setSpeed(250.0f);
+	pursuer->setColor(ORANGE);
+	PursuitBehavior* pursuitBehavior = new PursuitBehavior();
+	pursuer->addBehavior(pursuitBehavior);
+	pursuitBehavior->setTarget(player);
+	pursuer->addBehavior(screenEdgeBehavior);
+
+	Agent* fleer = new Agent();
+	fleer->setPosition({ 1200.0f, 600.0f });
+	fleer->setSpeed(250.0f);
+	fleer->setColor(LIME);
+	FleeBehavior* fleeBehavior = new FleeBehavior();
+	fleer->addBehavior(fleeBehavior);
+	fleeBehavior->setTarget(player);
+	fleer->addBehavior(screenEdgeBehavior);
+
+	Agent* evader = new Agent();
+	evader->setPosition({ 1200.0f, 600.0f });
+	evader->setSpeed(250.0f);
+	evader->setColor(GREEN);
+	EvadeBehavior* evadeBehavior = new EvadeBehavior();
+	evader->addBehavior(evadeBehavior);
+	evadeBehavior->setTarget(player);
+	evader->addBehavior(screenEdgeBehavior);
+
+	Agent* wanderer = new Agent();
+	wanderer->setPosition({ 600.0f, 600.0f });
+	wanderer->setSpeed(250.0f);
+	wanderer->setColor(VIOLET);
+	WanderBehavior* wanderBehavior = new WanderBehavior();
+	wanderer->addBehavior(wanderBehavior);
+	wanderer->addBehavior(screenEdgeBehavior);
+
+	Agent* arriver = new Agent();
+	arriver->setPosition({ 1200.0f, 600.0f });
+	arriver->setSpeed(250.0f);
+	arriver->setColor(YELLOW);
+	ArriveBehavior* arriveBehavior = new ArriveBehavior();
+	arriver->addBehavior(arriveBehavior);
+	arriveBehavior->setTarget(player);
+	arriver->addBehavior(screenEdgeBehavior);
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
@@ -43,8 +100,14 @@ int main()
 	{
 		// Update
 		//----------------------------------------------------------------------------------
-		player->update(GetFrameTime());
-		enemy->update(GetFrameTime());
+		float deltaTime = GetFrameTime();
+		player->update(deltaTime);
+		seeker->update(deltaTime);
+		pursuer->update(deltaTime);
+		fleer->update(deltaTime);
+		evader->update(deltaTime);
+		wanderer->update(deltaTime);
+		//arriver->update(deltaTime);
 		//----------------------------------------------------------------------------------
 
 		// Draw
@@ -54,7 +117,12 @@ int main()
 		ClearBackground(BLACK);
 
 		player->draw();
-		enemy->draw();
+		seeker->draw();
+		pursuer->draw();
+		fleer->draw();
+		evader->draw();
+		wanderer->draw();
+		arriver->draw();
 
 		EndDrawing();
 		//----------------------------------------------------------------------------------

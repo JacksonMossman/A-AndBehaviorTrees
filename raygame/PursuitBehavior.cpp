@@ -1,6 +1,6 @@
-#include "SeekBehavior.h"
+#include "PursuitBehavior.h"
 
-Vector2 SeekBehavior::update(Agent* agent, float deltaTime)
+Vector2 PursuitBehavior::update(Agent* agent, float deltaTime)
 {
 	//If the target is null
 	if (agent == nullptr || m_target == nullptr) {
@@ -11,7 +11,7 @@ Vector2 SeekBehavior::update(Agent* agent, float deltaTime)
 	//Get this agent's position
 	Vector2 pos = agent->getPosition();
 	//Get the position of the target agent
-	Vector2 targetPos = m_target->getPosition();
+	Vector2 targetPos = m_target->getPosition() + m_target->getVelocity();
 
 	//Calculate the vector describing the direction to the target and normalize it
 	Vector2 direction = targetPos - pos;

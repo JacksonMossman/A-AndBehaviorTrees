@@ -1,6 +1,6 @@
-#include "SeekBehavior.h"
+#include "ArriveBehavior.h"
 
-Vector2 SeekBehavior::update(Agent* agent, float deltaTime)
+Vector2 ArriveBehavior::update(Agent* agent, float deltaTime)
 {
 	//If the target is null
 	if (agent == nullptr || m_target == nullptr) {
@@ -16,6 +16,13 @@ Vector2 SeekBehavior::update(Agent* agent, float deltaTime)
 	//Calculate the vector describing the direction to the target and normalize it
 	Vector2 direction = targetPos - pos;
 	direction = direction.normalize();
+	//Multiply the direction by the speed we want the agent to move
+	//if ((targetPos - pos).magnitude() / 100.0f < 500) {
+	//	direction = direction * ((targetPos - pos).magnitude() / 100.0f);
+	//}
+	//else {
+		direction = direction * agent->getSpeed();
+	//}
 	//Multiply the direction by the speed we want the agent to move
 	Vector2 force = direction * agent->getSpeed();
 	//Subtract the agent's current velocity from the result to get the force we need to apply
