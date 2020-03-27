@@ -42,12 +42,6 @@
     <ClCompile Include="EvadeBehavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AvoidBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ArriveBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ScreenEdgeBehavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -75,12 +69,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EvadeBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AvoidBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ArriveBehavior.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ScreenEdgeBehavior.h">

@@ -18,7 +18,6 @@
 #include "WanderBehavior.h"
 #include "PursuitBehavior.h"
 #include "EvadeBehavior.h"
-#include "ArriveBehavior.h"
 #include "ScreenEdgeBehavior.h"
 
 int main()
@@ -84,15 +83,6 @@ int main()
 	WanderBehavior* wanderBehavior = new WanderBehavior();
 	wanderer->addBehavior(wanderBehavior);
 	wanderer->addBehavior(screenEdgeBehavior);
-
-	Agent* arriver = new Agent();
-	arriver->setPosition({ 1200.0f, 600.0f });
-	arriver->setSpeed(250.0f);
-	arriver->setColor(YELLOW);
-	ArriveBehavior* arriveBehavior = new ArriveBehavior();
-	arriver->addBehavior(arriveBehavior);
-	arriveBehavior->setTarget(player);
-	arriver->addBehavior(screenEdgeBehavior);
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
@@ -107,7 +97,6 @@ int main()
 		fleer->update(deltaTime);
 		evader->update(deltaTime);
 		wanderer->update(deltaTime);
-		//arriver->update(deltaTime);
 		//----------------------------------------------------------------------------------
 
 		// Draw
@@ -122,7 +111,6 @@ int main()
 		fleer->draw();
 		evader->draw();
 		wanderer->draw();
-		arriver->draw();
 
 		EndDrawing();
 		//----------------------------------------------------------------------------------
