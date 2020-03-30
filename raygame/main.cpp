@@ -11,14 +11,12 @@
 
 #include "raylib.h"
 #include "Agent.h"
-#include "Behavior.h"
 #include "KeyboardBehavior.h"
-#include "SeekBehavior.h"
-#include "FleeBehavior.h"
-#include "WanderBehavior.h"
-#include "PursuitBehavior.h"
-#include "EvadeBehavior.h"
 #include "ScreenEdgeBehavior.h"
+#include "FSM.h" 
+#include "IdleState.h"
+#include "EnemyAttackState.h"
+#include "WithinRangeCondition.h"
 
 int main()
 {
@@ -30,59 +28,42 @@ int main()
 	InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
 	SetTargetFPS(60);
-
+	
+	//Create the player
 	Agent* player = new Agent();
-	player->setPosition({ 1600.0f, 900.0f });
+	player->setPosition(Vector2{ 1600.0f, 900.0f });
 	player->setSpeed(500.0f);
 	player->setColor(SKYBLUE);
+	//Create and add keyboard behavior
 	KeyboardBehavior* keyboardBehavior = new KeyboardBehavior();
 	player->addBehavior(keyboardBehavior);
+	//Create and add screen edge behavior
 	ScreenEdgeBehavior* screenEdgeBehavior = new ScreenEdgeBehavior();
 	player->addBehavior(screenEdgeBehavior);
 
-	Agent* seeker = new Agent();
-	seeker->setPosition({ 1500.0f, 1000.0f });
-	seeker->setSpeed(250.0f);
-	seeker->setColor(MAROON);
-	SeekBehavior* seekBehavior = new SeekBehavior();
-	seeker->addBehavior(seekBehavior);
-	seekBehavior->setTarget(player);
-	seeker->addBehavior(screenEdgeBehavior);
-
-	Agent* pursuer = new Agent();
-	pursuer->setPosition({ 1500.0f, 1000.0f });
-	pursuer->setSpeed(250.0f);
-	pursuer->setColor(ORANGE);
-	PursuitBehavior* pursuitBehavior = new PursuitBehavior();
-	pursuer->addBehavior(pursuitBehavior);
-	pursuitBehavior->setTarget(player);
-	pursuer->addBehavior(screenEdgeBehavior);
-
-	Agent* fleer = new Agent();
-	fleer->setPosition({ 1200.0f, 600.0f });
-	fleer->setSpeed(250.0f);
-	fleer->setColor(LIME);
-	FleeBehavior* fleeBehavior = new FleeBehavior();
-	fleer->addBehavior(fleeBehavior);
-	fleeBehavior->setTarget(player);
-	fleer->addBehavior(screenEdgeBehavior);
-
-	Agent* evader = new Agent();
-	evader->setPosition({ 1200.0f, 600.0f });
-	evader->setSpeed(250.0f);
-	evader->setColor(GREEN);
-	EvadeBehavior* evadeBehavior = new EvadeBehavior();
-	evader->addBehavior(evadeBehavior);
-	evadeBehavior->setTarget(player);
-	evader->addBehavior(screenEdgeBehavior);
-
-	Agent* wanderer = new Agent();
-	wanderer->setPosition({ 600.0f, 600.0f });
-	wanderer->setSpeed(250.0f);
-	wanderer->setColor(VIOLET);
-	WanderBehavior* wanderBehavior = new WanderBehavior();
-	wanderer->addBehavior(wanderBehavior);
-	wanderer->addBehavior(screenEdgeBehavior);
+	//Create the enemy
+	Agent* enemy = new Agent();
+	enemy->setPosition(Vector2{ 800.0f, 450.0f });
+	enemy->setSpeed(250.0f);
+	enemy->setColor(MAROON);
+	//Create and add the enemy's FSM
+	FSM* enemyFSM = new FSM();
+	enemy->addBehavior(enemyFSM);
+	//Create and add the idle state
+	IdleState* idleState = new IdleState();
+	enemyFSM->addState(idleState);
+	//Create and add the attack state
+	EnemyAttackState* attackState = new EnemyAttackState(player, 250.0f);
+	enemyFSM->addState(attackState);
+	//Create and add the condition
+	Condition* withinRangeCondition = new WithinRangeCondition(player, 200.0f);
+	enemyFSM->addCondition(withinRangeCondition);
+	//Create and add the transition
+	Transition* toAttackTransition = new Transition(attackState, withinRangeCondition);
+	enemyFSM->addTransition(toAttackTransition);
+	idleState->addTransitions(toAttackTransition);
+	//Set current state to idle
+	enemyFSM->setCurrentState(idleState);
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
@@ -91,12 +72,9 @@ int main()
 		// Update
 		//----------------------------------------------------------------------------------
 		float deltaTime = GetFrameTime();
+
 		player->update(deltaTime);
-		seeker->update(deltaTime);
-		pursuer->update(deltaTime);
-		fleer->update(deltaTime);
-		evader->update(deltaTime);
-		wanderer->update(deltaTime);
+		enemy->update(deltaTime);
 		//----------------------------------------------------------------------------------
 
 		// Draw
@@ -106,11 +84,7 @@ int main()
 		ClearBackground(BLACK);
 
 		player->draw();
-		seeker->draw();
-		pursuer->draw();
-		fleer->draw();
-		evader->draw();
-		wanderer->draw();
+		enemy->draw();
 
 		EndDrawing();
 		//----------------------------------------------------------------------------------
