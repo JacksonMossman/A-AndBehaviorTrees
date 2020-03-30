@@ -19,4 +19,3 @@ private:
 	State*		m_target;
 	Condition*	m_condition;
 };
-

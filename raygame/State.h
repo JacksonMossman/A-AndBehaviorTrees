@@ -23,4 +23,3 @@ public:
 protected:
 	std::vector<Transition*> m_transitions;
 };
-

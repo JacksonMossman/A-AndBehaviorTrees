@@ -5,7 +5,7 @@ Vector2 EvadeBehavior::update(Agent* agent, float deltaTime)
 	//If the target is null
 	if (agent == nullptr || m_target == nullptr) {
 		//Return a zero vector
-		return Vector2{ 0,0 };
+		return Vector2{ 0.0f, 0.0f };
 	}
 
 	//Get this agent's position

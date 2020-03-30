@@ -4,7 +4,7 @@
 void Agent::update(float deltaTime)
 {
 	//Set total force to zero
-	Vector2 totalForce = { 0,0 };
+	Vector2 totalForce = { 0.0f, 0.0f };
 	//For each Behavior in the Behavior list
 	for (auto i = m_BehaviorList.begin(); i != m_BehaviorList.end(); i++) {
 		//Call the Behavior's update function

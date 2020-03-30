@@ -9,4 +9,3 @@ public:
 
 	virtual Vector2 update(Agent* agent, float deltaTime) = 0;
 };
-

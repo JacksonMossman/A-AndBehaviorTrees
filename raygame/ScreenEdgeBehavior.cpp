@@ -5,7 +5,7 @@ Vector2 ScreenEdgeBehavior::update(Agent* agent, float deltaTime)
 	float x = agent->getPosition().x + agent->getVelocity().x;
 	float y = agent->getPosition().y + agent->getVelocity().y;
 
-	Vector2 force = { 0, 0 };
+	Vector2 force = { 0.0f, 0.0f };
 
 	//If out of bounds
 	if (x < 100 || x >= 3100 || y < 100 || y >= 1700) {

@@ -39,10 +39,9 @@ public:
 protected:
 	std::vector<Behavior*> m_BehaviorList;
 
-	Vector2 m_Position = { 0,0 };
-	Vector2 m_Velocity = { 0,0 };
+	Vector2 m_Position = { 0.0f, 0.0f };
+	Vector2 m_Velocity = { 0.0f, 0.0f };
 
 	float m_speed = 500.0f;
 	Color m_color = MAROON;
 };
-
