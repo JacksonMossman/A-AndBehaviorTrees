@@ -1,6 +1,6 @@
 #include "KeyboardBehavior.h"
 
-Vector2 KeyboardBehavior::update(Agent* agent, float deltaTime)
+void KeyboardBehavior::update(Agent* agent, float deltaTime)
 {
 	//Find the direction
 	Vector2 direction = { 0.0f, 0.0f };
@@ -17,5 +17,5 @@ Vector2 KeyboardBehavior::update(Agent* agent, float deltaTime)
 	//Subtract the agent's current velocity from the result to get the force we need to apply
 	force = force - agent->getVelocity();
 
-	return force;
+	agent->addForce(force * deltaTime);
 }

@@ -133,7 +133,10 @@
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Behavior.cpp" />
+    <ClCompile Include="BooleanDecision.cpp" />
     <ClCompile Include="Condition.cpp" />
+    <ClCompile Include="Decision.cpp" />
+    <ClCompile Include="DecisionBehavior.cpp" />
     <ClCompile Include="EnemyAttackState.cpp" />
     <ClCompile Include="EvadeBehavior.cpp" />
     <ClCompile Include="FSM.cpp" />
@@ -152,7 +155,10 @@
   <ItemGroup>
     <ClInclude Include="Agent.h" />
     <ClInclude Include="Behavior.h" />
+    <ClInclude Include="BooleanDecision.h" />
     <ClInclude Include="Condition.h" />
+    <ClInclude Include="Decision.h" />
+    <ClInclude Include="DecisionBehavior.h" />
     <ClInclude Include="EnemyAttackState.h" />
     <ClInclude Include="EvadeBehavior.h" />
     <ClInclude Include="FSM.h" />

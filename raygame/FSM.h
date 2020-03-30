@@ -17,7 +17,7 @@ public:
 	void setCurrentState(State* state) { m_currentState = state; }
 	State* getCurrentState() { return m_currentState; }
 
-	virtual Vector2 update(Agent* agent, float deltaTime);
+	virtual void update(Agent* agent, float deltaTime);
 
 protected:
 	std::vector<State*>			m_states;

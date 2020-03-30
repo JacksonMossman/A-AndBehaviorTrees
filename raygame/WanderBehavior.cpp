@@ -1,7 +1,7 @@
 #include "WanderBehavior.h"
 #include <cstdlib>
 
-Vector2 WanderBehavior::update(Agent* agent, float deltaTime)
+void WanderBehavior::update(Agent* agent, float deltaTime)
 {
 	auto randVec = []() {
 		float randX = (float)rand() - ((float)RAND_MAX) / 2;
@@ -36,5 +36,5 @@ Vector2 WanderBehavior::update(Agent* agent, float deltaTime)
 	force = force - agent->getVelocity();
 
 	//Return the force
-	return force;
+	agent->addForce(force * deltaTime);
 }

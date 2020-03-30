@@ -7,7 +7,7 @@ public:
 	WanderBehavior() {}
 	virtual ~WanderBehavior() {}
 
-	virtual Vector2 update(Agent* agent, float deltaTime);
+	virtual void update(Agent* agent, float deltaTime);
 
 private:
 	float m_radius = 2000.0f;

@@ -7,6 +7,6 @@ public:
 	ScreenEdgeBehavior() {}
 	virtual ~ScreenEdgeBehavior() {}
 
-	virtual Vector2 update(Agent* agent, float deltaTime);
+	virtual void update(Agent* agent, float deltaTime);
 };
 

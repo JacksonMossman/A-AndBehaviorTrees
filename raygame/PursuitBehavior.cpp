@@ -1,11 +1,11 @@
 #include "PursuitBehavior.h"
 
-Vector2 PursuitBehavior::update(Agent* agent, float deltaTime)
+void PursuitBehavior::update(Agent* agent, float deltaTime)
 {
 	//If the target is null
 	if (agent == nullptr || m_target == nullptr) {
 		//Return a zero vector
-		return Vector2{ 0.0f, 0.0f };
+		return;
 	}
 
 	//Get this agent's position
@@ -22,5 +22,5 @@ Vector2 PursuitBehavior::update(Agent* agent, float deltaTime)
 	force = force - agent->getVelocity();
 
 	//Return the force
-	return force;
+	agent->addForce(force * deltaTime);
 }
