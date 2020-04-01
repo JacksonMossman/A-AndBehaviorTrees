@@ -14,4 +14,3 @@ private:
 	Agent* m_target;
 	float m_range;
 };
-

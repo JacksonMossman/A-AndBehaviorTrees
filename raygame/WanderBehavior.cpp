@@ -37,4 +37,7 @@ void WanderBehavior::update(Agent* agent, float deltaTime)
 
 	//Return the force
 	agent->addForce(force * deltaTime);
+
+	//Change color
+	agent->setColor(GREEN);
 }

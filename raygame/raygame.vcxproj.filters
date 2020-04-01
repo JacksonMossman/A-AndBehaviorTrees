@@ -13,6 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\States">
+      <UniqueIdentifier>{be6ae837-8538-47a6-b18c-d14453e4aba1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Condtions">
+      <UniqueIdentifier>{36fc6699-7c8a-44ab-86a6-57ccc4bb6edf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Behaviors">
+      <UniqueIdentifier>{c816ab9f-d574-4284-acdd-223a31c6872e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\States">
+      <UniqueIdentifier>{0541701f-7c2f-42a9-ad11-441a26a01e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Conditions">
+      <UniqueIdentifier>{875ac6ec-4dbb-4b7e-a717-3e1ae42a17e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Behaviors">
+      <UniqueIdentifier>{b5eec14b-186c-4780-8768-af8f105a362c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Decisions">
+      <UniqueIdentifier>{931838d1-a3fa-4a24-9dff-d8f453aa2fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Decisions">
+      <UniqueIdentifier>{7dca6163-d6ad-4f30-869a-7d1f35ee5348}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,118 +45,130 @@
     <ClCompile Include="Agent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Behavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyboardBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SeekBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FleeBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WanderBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PursuitBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EvadeBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ScreenEdgeBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Transition.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Condition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FSM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IdleState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyAttackState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WithinRangeCondition.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DecisionBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Decision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BooleanDecision.cpp">
+    <ClCompile Include="EvadeBehavior.cpp">
+      <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="FleeBehavior.cpp">
+      <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardBehavior.cpp">
+      <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="PursuitBehavior.cpp">
+      <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenEdgeBehavior.cpp">
+      <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekBehavior.cpp">
+      <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="WanderBehavior.cpp">
+      <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="WithinRangeCondition.cpp">
+      <Filter>Source Files\Condtions</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyAttackState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Condition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveToTargetDecision.cpp">
+      <Filter>Source Files\Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="BooleanDecision.cpp">
+      <Filter>Source Files\Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionTreeBehavior.cpp">
+      <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="BehaviorDecision.cpp">
+      <Filter>Source Files\Decisions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Behavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyboardBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SeekBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FleeBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WanderBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PursuitBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EvadeBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ScreenEdgeBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Transition.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Condition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FSM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IdleState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyAttackState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WithinRangeCondition.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DecisionBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Decision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BooleanDecision.h">
+    <ClInclude Include="EvadeBehavior.h">
+      <Filter>Header Files\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="FleeBehavior.h">
+      <Filter>Header Files\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardBehavior.h">
+      <Filter>Header Files\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="PursuitBehavior.h">
+      <Filter>Header Files\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenEdgeBehavior.h">
+      <Filter>Header Files\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekBehavior.h">
+      <Filter>Header Files\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="WanderBehavior.h">
+      <Filter>Header Files\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="WithinRangeCondition.h">
+      <Filter>Header Files\Conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyAttackState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Condition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveToTargetDecision.h">
+      <Filter>Header Files\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="BooleanDecision.h">
+      <Filter>Header Files\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionTreeBehavior.h">
+      <Filter>Header Files\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="BehaviorDecision.h">
+      <Filter>Header Files\Decisions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
