@@ -140,12 +140,11 @@
     <ClCompile Include="DecisionTreeBehavior.cpp" />
     <ClCompile Include="EnemyAttackState.cpp" />
     <ClCompile Include="EvadeBehavior.cpp" />
-    <ClCompile Include="FSM.cpp" />
+    <ClCompile Include="FSMBehavior.cpp" />
     <ClCompile Include="FleeBehavior.cpp" />
     <ClCompile Include="IdleState.cpp" />
     <ClCompile Include="KeyboardBehavior.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MoveToTargetDecision.cpp" />
     <ClCompile Include="PursuitBehavior.cpp" />
     <ClCompile Include="ScreenEdgeBehavior.cpp" />
     <ClCompile Include="SeekBehavior.cpp" />
@@ -164,11 +163,10 @@
     <ClInclude Include="DecisionTreeBehavior.h" />
     <ClInclude Include="EnemyAttackState.h" />
     <ClInclude Include="EvadeBehavior.h" />
-    <ClInclude Include="FSM.h" />
+    <ClInclude Include="FSMBehavior.h" />
     <ClInclude Include="FleeBehavior.h" />
     <ClInclude Include="IdleState.h" />
     <ClInclude Include="KeyboardBehavior.h" />
-    <ClInclude Include="MoveToTargetDecision.h" />
     <ClInclude Include="PursuitBehavior.h" />
     <ClInclude Include="ScreenEdgeBehavior.h" />
     <ClInclude Include="SeekBehavior.h" />

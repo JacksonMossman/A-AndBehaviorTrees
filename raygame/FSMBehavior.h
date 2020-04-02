@@ -4,11 +4,11 @@
 #include "Transition.h"
 #include "Condition.h"
 
-class FSM : public Behavior
+class FSMBehavior : public Behavior
 {
 public:
-	FSM() : m_currentState(nullptr) {}
-	virtual ~FSM();
+	FSMBehavior() : m_currentState(nullptr) {}
+	virtual ~FSMBehavior();
 
 	void addState(State* state) { m_states.push_back(state); }
 	void addTransition(Transition* transition) { m_transitions.push_back(transition); }

@@ -1,6 +1,12 @@
 #pragma once
 #include "Decision.h"
 
+/*	BehaviorDecision
+A BehaviorDecision is a Decision that stores a Behavior.
+When makeDecision is called, the stored Behavior's
+update() function is called.
+*/
+
 class BehaviorDecision : public Decision
 {
 public:

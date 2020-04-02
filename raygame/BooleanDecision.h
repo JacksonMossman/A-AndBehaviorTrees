@@ -2,6 +2,11 @@
 #include "Decision.h"
 #include "Condition.h"
 
+/*	BooleanDecision
+An instance of the BooleanDecision can be used to create
+a branch in a decision tree.
+*/
+
 class BooleanDecision : public Decision
 {
 public:

@@ -1,6 +1,6 @@
-#include "FSM.h"
+#include "FSMBehavior.h"
 
-FSM::~FSM()
+FSMBehavior::~FSMBehavior()
 {
 	for (State* s : m_states)
 		delete s;
@@ -10,7 +10,7 @@ FSM::~FSM()
 		delete c;
 }
 
-void FSM::update(Agent* agent, float deltaTime)
+void FSMBehavior::update(Agent* agent, float deltaTime)
 {
 	//Stop if we have no current state
 	if (m_currentState == nullptr) {

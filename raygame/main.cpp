@@ -16,7 +16,7 @@
 #include "WanderBehavior.h"
 #include "SeekBehavior.h"
 #include "PursuitBehavior.h"
-#include "FSM.h" 
+#include "FSMBehavior.h" 
 #include "IdleState.h"
 #include "EnemyAttackState.h"
 #include "WithinRangeCondition.h"
@@ -54,7 +54,7 @@ int main()
 	enemy->setColor(DARKBLUE);
 
 	//Create and add the enemy's FSM
-	FSM* enemyFSM = new FSM();
+	FSMBehavior* enemyFSM = new FSMBehavior();
 	//enemy->addBehavior(enemyFSM);
 	//Create and add the idle state
 	IdleState* idleState = new IdleState();

@@ -48,9 +48,6 @@
     <ClCompile Include="Transition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FSM.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Decision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -93,9 +90,6 @@
     <ClCompile Include="Behavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MoveToTargetDecision.cpp">
-      <Filter>Source Files\Decisions</Filter>
-    </ClCompile>
     <ClCompile Include="BooleanDecision.cpp">
       <Filter>Source Files\Decisions</Filter>
     </ClCompile>
@@ -105,15 +99,15 @@
     <ClCompile Include="BehaviorDecision.cpp">
       <Filter>Source Files\Decisions</Filter>
     </ClCompile>
+    <ClCompile Include="FSMBehavior.cpp">
+      <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Transition.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FSM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Decision.h">
@@ -158,9 +152,6 @@
     <ClInclude Include="Behavior.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MoveToTargetDecision.h">
-      <Filter>Header Files\Decisions</Filter>
-    </ClInclude>
     <ClInclude Include="BooleanDecision.h">
       <Filter>Header Files\Decisions</Filter>
     </ClInclude>
@@ -169,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="BehaviorDecision.h">
       <Filter>Header Files\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="FSMBehavior.h">
+      <Filter>Header Files\Behaviors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,6 +2,13 @@
 #include "raylib.h"
 #include <vector>
 
+/*	Agent
+The Agent class is our game object class. Agents can any
+number of Behaviors and will execute each of them in the
+order they were added. Behaviors may apply forces to an
+Agent or change its speed or color.
+ */
+
 class Behavior;
 
 class Agent
