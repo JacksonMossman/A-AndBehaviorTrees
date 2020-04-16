@@ -13,17 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\States">
-      <UniqueIdentifier>{be6ae837-8538-47a6-b18c-d14453e4aba1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Condtions">
       <UniqueIdentifier>{36fc6699-7c8a-44ab-86a6-57ccc4bb6edf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Behaviors">
       <UniqueIdentifier>{c816ab9f-d574-4284-acdd-223a31c6872e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\States">
-      <UniqueIdentifier>{0541701f-7c2f-42a9-ad11-441a26a01e10}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Conditions">
       <UniqueIdentifier>{875ac6ec-4dbb-4b7e-a717-3e1ae42a17e0}</UniqueIdentifier>
@@ -37,18 +31,18 @@
     <Filter Include="Source Files\Decisions">
       <UniqueIdentifier>{7dca6163-d6ad-4f30-869a-7d1f35ee5348}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Agents">
+      <UniqueIdentifier>{84919cba-f4aa-4357-b444-4f113e8252e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Agents">
+      <UniqueIdentifier>{4aa620c7-80f5-4219-882f-a150bdd908bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Agent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Transition.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Decision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EvadeBehavior.cpp">
@@ -75,21 +69,6 @@
     <ClCompile Include="WithinRangeCondition.cpp">
       <Filter>Source Files\Condtions</Filter>
     </ClCompile>
-    <ClCompile Include="EnemyAttackState.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
-    <ClCompile Include="IdleState.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Condition.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Behavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BooleanDecision.cpp">
       <Filter>Source Files\Decisions</Filter>
     </ClCompile>
@@ -99,14 +78,32 @@
     <ClCompile Include="BehaviorDecision.cpp">
       <Filter>Source Files\Decisions</Filter>
     </ClCompile>
-    <ClCompile Include="FSMBehavior.cpp">
+    <ClCompile Include="StarAgent.cpp">
+      <Filter>Source Files\Agents</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlockingBehavior.cpp">
       <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAgent.cpp">
+      <Filter>Source Files\Agents</Filter>
+    </ClCompile>
+    <ClCompile Include="AABB.cpp">
+      <Filter>Source Files\Agents</Filter>
+    </ClCompile>
+    <ClCompile Include="NavMeshAgent.cpp">
+      <Filter>Source Files\Agents</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeAgent.cpp">
+      <Filter>Source Files\Agents</Filter>
+    </ClCompile>
+    <ClCompile Include="AStar.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Agent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Transition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -137,12 +134,6 @@
     <ClInclude Include="WithinRangeCondition.h">
       <Filter>Header Files\Conditions</Filter>
     </ClInclude>
-    <ClInclude Include="IdleState.h">
-      <Filter>Header Files\States</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyAttackState.h">
-      <Filter>Header Files\States</Filter>
-    </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -161,8 +152,32 @@
     <ClInclude Include="BehaviorDecision.h">
       <Filter>Header Files\Decisions</Filter>
     </ClInclude>
-    <ClInclude Include="FSMBehavior.h">
+    <ClInclude Include="StarAgent.h">
+      <Filter>Header Files\Agents</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAgent.h">
+      <Filter>Header Files\Agents</Filter>
+    </ClInclude>
+    <ClInclude Include="FlockingBehavior.h">
       <Filter>Header Files\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB.h">
+      <Filter>Header Files\Agents</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeAgent.h">
+      <Filter>Header Files\Agents</Filter>
+    </ClInclude>
+    <ClInclude Include="Agent.h">
+      <Filter>Header Files\Agents</Filter>
+    </ClInclude>
+    <ClInclude Include="NavMeshAgent.h">
+      <Filter>Header Files\Agents</Filter>
+    </ClInclude>
+    <ClInclude Include="AStar.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 #include "ScreenEdgeBehavior.h"
+#include "Game.h"
 
 void ScreenEdgeBehavior::update(Agent* agent, float deltaTime)
 {
@@ -8,7 +9,7 @@ void ScreenEdgeBehavior::update(Agent* agent, float deltaTime)
 	Vector2 force = { 0.0f, 0.0f };
 
 	//If out of bounds
-	if (x < 100 || x >= 3100 || y < 100 || y >= 1700) {
+	if (x < 100 || x >= GetScreenWidth() || y < 100 || y >= GetScreenHeight()) {
 		//Get this agent's position
 		Vector2 pos = agent->getPosition();
 		//Target the center
