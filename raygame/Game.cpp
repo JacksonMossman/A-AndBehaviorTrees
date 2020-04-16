@@ -54,8 +54,8 @@ void Game::run()
 	
 	AStar* astar = new AStar;
 
-	std::vector<Node*> path = astar->AStarSearch(navmesh->start->node, navmesh->target->node);
-
+	std::vector<NodeAgent*> path = astar->AStarSearch(navmesh->start, navmesh->target);
+	navmesh->SelectPath(path);
 	//navmesh->SelectPath(path);
 	StarAgent* star3 = new StarAgent();
 	StarAgent* star4 = new StarAgent();
