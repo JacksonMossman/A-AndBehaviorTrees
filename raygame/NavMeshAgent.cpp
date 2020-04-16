@@ -18,11 +18,11 @@ NavMeshAgent::NavMeshAgent(float screenX, float screenY)
 				{
 					start = newStar;
 				}
-				if (i == 5 && j == 5)
+				if (i == 8 && j == 8)
 				{
 					target = newStar;
 				}
-				if (random == 1)
+				if (random == 1 && newStar != start && newStar != target)
 				{
 					newStar->blocked = true;
 					newStar->setColor(RED);
@@ -42,7 +42,7 @@ NavMeshAgent::NavMeshAgent(float screenX, float screenY)
 		//compare each agent to every other agent 
 		for (NodeAgent*  agent1 : navMeshAgents )
 		{
-			agent1->node->connections;
+			agent1->connections;
 			for (NodeAgent* agent2 : navMeshAgents)
 			{
 				if (agent1 != agent2)
@@ -54,10 +54,10 @@ NavMeshAgent::NavMeshAgent(float screenX, float screenY)
 						//make a new edge of all the avaliable targets and give it a cost based off the distance from the original point
 						Edge* newEdge = new Edge;
 						//set values of new edge to agent 2 node if in range
-						newEdge->target = agent2->node;
+						newEdge->target = agent2;
 						newEdge->cost = agent1->getPosition().magnitude() + agent2->getPosition().magnitude();
 						//push node onto connections
-						agent1->node->connections.push_back(*newEdge);
+						agent1->connections.push_back(*newEdge);
 
 					}
 				}

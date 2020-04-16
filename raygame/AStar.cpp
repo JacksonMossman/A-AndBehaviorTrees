@@ -1,15 +1,15 @@
 #include "AStar.h"
 
 
-std::vector<Node*> AStar::AStarSearch(Node* startNode, Node* endNode)
+std::vector<NodeAgent*> AStar::AStarSearch(NodeAgent* startNode, NodeAgent* endNode)
 {
 	//Validate the input
 	if (startNode == nullptr || endNode == nullptr) {
-		return std::vector<Node*>();
+		return std::vector<NodeAgent*>();
 	}
 
 	if (startNode == endNode) {
-		std::vector<Node*> singleNodePath;
+		std::vector<NodeAgent*> singleNodePath;
 		singleNodePath.push_back(startNode);
 		return singleNodePath;
 	}
@@ -19,8 +19,8 @@ std::vector<Node*> AStar::AStarSearch(Node* startNode, Node* endNode)
 	startNode->previous = nullptr;
 
 	//Create our temporary lists for storing nodes
-	std::vector<Node*> openList;
-	std::vector<Node*> closedList;
+	std::vector<NodeAgent*> openList;
+	std::vector<NodeAgent*> closedList;
 
 	//Add the starting node to openList
 	openList.push_back(startNode);
@@ -28,7 +28,7 @@ std::vector<Node*> AStar::AStarSearch(Node* startNode, Node* endNode)
 	while (!openList.empty())
 	{
 		//Set the current node to the first node in the openList
-		Node* currentNode = openList.front();
+		NodeAgent* currentNode = openList.front();
 		//Remove currentNode from openList
 		openList.erase(openList.begin());
 		//Add currentNode to closedList
@@ -81,8 +81,8 @@ std::vector<Node*> AStar::AStarSearch(Node* startNode, Node* endNode)
 		}
 	}
 	//Create path in reverse from endNode to startNode
-	std::vector<Node*> path;
-	Node* currentNode = endNode;
+	std::vector<NodeAgent*> path;
+	NodeAgent* currentNode = endNode;
 
 	while (currentNode != nullptr)
 	{
@@ -94,7 +94,7 @@ std::vector<Node*> AStar::AStarSearch(Node* startNode, Node* endNode)
 	return path;
 }
 
-float AStar::heuristic(Node* target, Node* endNode)
+float AStar::heuristic(NodeAgent* target, NodeAgent* endNode)
 {
 	return 0;
 }

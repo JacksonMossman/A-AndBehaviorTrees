@@ -16,4 +16,3 @@ public:
 	std::vector<Agent*> starList;
 
 };
-
