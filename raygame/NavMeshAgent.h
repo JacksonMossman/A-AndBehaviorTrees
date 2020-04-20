@@ -1,6 +1,7 @@
 #pragma once
 #include "NodeAgent.h"
 #include "AStar.h"
+#include "WanderBehavior.h"
 class NavMeshAgent :
 	public Agent
 {
@@ -15,9 +16,9 @@ public:
 	NodeAgent* target;
 	bool changedPath = false;
 	std::vector<NodeAgent*> m_path;
-	AStar* astar = new AStar;
+	
 	void update(float deltaTime) override;
 private:
-	
+	AStar* astar = new AStar;
 };
 

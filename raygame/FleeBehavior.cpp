@@ -23,4 +23,6 @@ void FleeBehavior::update(Agent* agent, float deltaTime)
 
 	//Return the force
 	agent->addForce(force);
+
+	agent->setColor(BLUE);
 }

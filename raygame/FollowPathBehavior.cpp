@@ -51,6 +51,7 @@ void FollowPathBehavior::update(Agent* agent, float deltaTime)
 				std::cout << m_pathPosition << std::endl << m_path.size();
 				m_target = m_path.at(m_pathPosition);
 			}
+			//send the node back 
 			else
 			{
 				goBack = false;
@@ -75,6 +76,8 @@ void FollowPathBehavior::update(Agent* agent, float deltaTime)
 
 	//Return the force
 	agent->addForce(force);
+
+	agent->setColor(GREEN);
 
 	
 }

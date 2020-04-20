@@ -136,9 +136,7 @@
     <ClCompile Include="AStar.cpp" />
     <ClCompile Include="BehaviorDecision.cpp" />
     <ClCompile Include="BooleanDecision.cpp" />
-    <ClCompile Include="CapturedCondition.cpp" />
     <ClCompile Include="DecisionTreeBehavior.cpp" />
-    <ClCompile Include="EvadeBehavior.cpp" />
     <ClCompile Include="FleeBehavior.cpp" />
     <ClCompile Include="FlockingBehavior.cpp" />
     <ClCompile Include="FollowPathBehavior.cpp" />
@@ -148,7 +146,6 @@
     <ClCompile Include="NavMeshAgent.cpp" />
     <ClCompile Include="NodeAgent.cpp" />
     <ClCompile Include="PlayerAgent.cpp" />
-    <ClCompile Include="PursuitBehavior.cpp" />
     <ClCompile Include="ScreenEdgeBehavior.cpp" />
     <ClCompile Include="SeekBehavior.cpp" />
     <ClCompile Include="StarAgent.cpp" />
@@ -162,11 +159,9 @@
     <ClInclude Include="Behavior.h" />
     <ClInclude Include="BehaviorDecision.h" />
     <ClInclude Include="BooleanDecision.h" />
-    <ClInclude Include="CapturedCondition.h" />
     <ClInclude Include="Condition.h" />
     <ClInclude Include="Decision.h" />
     <ClInclude Include="DecisionTreeBehavior.h" />
-    <ClInclude Include="EvadeBehavior.h" />
     <ClInclude Include="FleeBehavior.h" />
     <ClInclude Include="FlockingBehavior.h" />
     <ClInclude Include="FollowPathBehavior.h" />
@@ -175,12 +170,9 @@
     <ClInclude Include="NavMeshAgent.h" />
     <ClInclude Include="NodeAgent.h" />
     <ClInclude Include="PlayerAgent.h" />
-    <ClInclude Include="PursuitBehavior.h" />
     <ClInclude Include="ScreenEdgeBehavior.h" />
     <ClInclude Include="SeekBehavior.h" />
     <ClInclude Include="StarAgent.h" />
-    <ClInclude Include="State.h" />
-    <ClInclude Include="Transition.h" />
     <ClInclude Include="WanderBehavior.h" />
     <ClInclude Include="WithinRangeCondition.h" />
   </ItemGroup>

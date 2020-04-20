@@ -12,7 +12,6 @@ public:
 	float left();
 	float right;
 	AABB(float height, float width, Agent* parent);
-	bool detectCollision(AABB other);
 	virtual void update(float deltaTime);
 	void draw() override;
 	Agent* Parent = nullptr;

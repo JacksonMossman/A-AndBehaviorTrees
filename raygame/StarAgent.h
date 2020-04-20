@@ -4,7 +4,6 @@
 #include "DecisionTreeBehavior.h"
 #include "BooleanDecision.h"
 #include "FlockingBehavior.h"
-#include "CapturedCondition.h"
 #include "SeekBehavior.h"
 #include "FleeBehavior.h"
 #include "AABB.h"

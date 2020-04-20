@@ -21,10 +21,7 @@ void SeekBehavior::update(Agent* agent, float deltaTime)
 	//Subtract the agent's current velocity from the result to get the force we need to apply
 	force = force - agent->getVelocity();
 
-
 	//Return the force
 	agent->addForce(force);
 
-	//Change color
-	/*agent->setColor(YELLOW);*/
 }

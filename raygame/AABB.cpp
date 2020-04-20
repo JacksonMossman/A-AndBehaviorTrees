@@ -16,10 +16,6 @@ AABB::AABB(float height, float width, Agent* parent)
 	right = m_position.x + Width / 2;
 }
 
-bool AABB::detectCollision(AABB other)
-{
-	return false;
-}
 
 void AABB::update(float deltaTime)
 {
