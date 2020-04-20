@@ -14,5 +14,6 @@ public:
 	int screenWidth = 1800;
 	int screenHeight = 1000;
 	std::vector<Agent*> starList;
+	Agent* player;
 
 };

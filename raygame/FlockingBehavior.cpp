@@ -20,13 +20,12 @@ void FlockingBehavior::update(Agent* agent, float deltaTime)
 			averagePosition += i->getPosition();
 		}
 		
-		averagePosition.x  =averagePosition.x / m_flock.size();
+		averagePosition.x = averagePosition.x / m_flock.size();
 		averagePosition.y = averagePosition.y / m_flock.size();
 		//normalize the direction of the average position
-		averagePosition = averagePosition.normalize();
-		Vector2 force = averagePosition * agent->getSpeed();
-		force = force - agent->getVelocity();
-		
+		averagePosition = averagePosition - agent->getPosition();
+		Vector2 direction = averagePosition.normalize();
+		Vector2 force = direction * agent->getSpeed();
 		agent->addForce(force);
 }
 

@@ -102,6 +102,12 @@
     <ClCompile Include="AStar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FollowPathBehavior.cpp">
+      <Filter>Source Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="CapturedCondition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Transition.h">
@@ -178,6 +184,12 @@
     </ClInclude>
     <ClInclude Include="AStar.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CapturedCondition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowPathBehavior.h">
+      <Filter>Header Files\Behaviors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

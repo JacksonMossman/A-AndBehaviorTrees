@@ -93,7 +93,7 @@ std::vector<NodeAgent*> AStar::AStarSearch(NodeAgent* startNode, NodeAgent* endN
 	}
 	return path;
 }
-
+//No Heuristic
 float AStar::heuristic(NodeAgent* target, NodeAgent* endNode)
 {
 	return 0;

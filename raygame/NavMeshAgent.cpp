@@ -1,5 +1,4 @@
 #include "NavMeshAgent.h"
-#include "NodeAgent.h"
 
 NavMeshAgent::NavMeshAgent(float screenX, float screenY)
 {
@@ -26,10 +25,7 @@ NavMeshAgent::NavMeshAgent(float screenX, float screenY)
 				{
 					newStar->blocked = true;
 					newStar->setColor(RED);
-				}
-				if (newStar->blocked)
-				{
-					newStar->setPosition(Vector2{ 99999.0f,99999.0f });
+					
 				}
 				else
 				{
@@ -55,7 +51,11 @@ NavMeshAgent::NavMeshAgent(float screenX, float screenY)
 						Edge* newEdge = new Edge;
 						//set values of new edge to agent 2 node if in range
 						newEdge->target = agent2;
-						newEdge->cost = agent1->getPosition().magnitude() + agent2->getPosition().magnitude();
+						newEdge->cost = (agent1->getPosition() + agent2->getPosition()).magnitude();
+						if (agent2->blocked== true)
+						{
+							newEdge->cost = 9999999999999999;
+						}
 						//push node onto connections
 						agent1->connections.push_back(*newEdge);
 
@@ -76,12 +76,71 @@ void NavMeshAgent::draw()
 	{
 		i->draw();
 	}
+	changedPath = false;
 }
 
 void NavMeshAgent::SelectPath(std::vector<NodeAgent*> path)
 {
+	for (NodeAgent* agent : navMeshAgents)
+	{
+		if (agent->blocked)
+		{
+			agent->setColor(RED);
+		}
+		else
+		{
+			agent->setColor(BLUE);
+		}
+	}
+	
 	for (NodeAgent* node : path)
 	{
 		node->setColor(YELLOW);
 	}
 }
+
+void NavMeshAgent::SetNewTarget()
+{
+	if (IsMouseButtonPressed(0))
+	{
+		float ShortestDistance = 99999.99999f;
+		NodeAgent* curretClosestTocursor = new NodeAgent;
+		for (NodeAgent* agent : navMeshAgents)
+		{
+			Vector2 temp;
+			temp = agent->getPosition() - GetMousePosition();
+			if (temp.magnitude() < ShortestDistance)
+			{
+				ShortestDistance = temp.magnitude();
+				curretClosestTocursor = agent;
+				changedPath = true;
+			}
+		}
+		if(curretClosestTocursor != target)
+		{
+			if (target->blocked)
+			{
+				target->setColor(RED);
+			}
+			else
+			{
+				target->setColor(BLUE);
+			}
+			
+			
+			
+		}
+		start = target;
+		target = curretClosestTocursor;
+		curretClosestTocursor->setColor(PURPLE);	
+	}
+}
+
+void NavMeshAgent::update(float deltaTime)
+{
+	SetNewTarget();
+	m_path = astar->AStarSearch(start, target);
+	SelectPath(m_path);
+
+}
+

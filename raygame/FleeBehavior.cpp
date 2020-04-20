@@ -22,5 +22,5 @@ void FleeBehavior::update(Agent* agent, float deltaTime)
 	force = force - agent->getVelocity();
 
 	//Return the force
-	agent->addForce(force * deltaTime);
+	agent->addForce(force);
 }
